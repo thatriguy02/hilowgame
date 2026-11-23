@@ -1,0 +1,117 @@
+# IT 140 Module Four Assignment
+# Higher/Lower Game Pseudocode Template
+#
+# Complete the TODO prompts below with your own pseudocode.
+# Keep this file in .pseudo format for submission.
+#
+# Use clear indentation to show decisions and repeated behavior.
+# Your finished pseudocode should address every requirement in the
+# current Module Four Assignment Guidelines and Rubric.
+
+START hilow_game
+
+    # Establish a valid guessing range.
+    OUTPUT "Enter the lower bound"
+    INPUT lower_bound
+    
+    OUTPUT "Enter upper bound"
+    INPUT upper_bound
+    
+    WHILE lower_bound >= upper_bound
+        OUTPUT "Invalid input, please try again"
+        OUTPUT "Enter the lower bound"
+        INPUT lower_bound
+    
+        OUTPUT "Enter upper bound"
+        INPUT upper_bound        
+
+    # Establish the number the player is trying to guess.
+    SET secret_number = RANDOM INTEGER BETWEEN lower_bound AND upper_bound
+
+    # Play the game.
+    OUTPUT "Guess a number between", lower_bound, "and", upper_bound
+    INPUT num_guess
+    
+    WHILE num_guess < lower_bound OR num_guess > upper_bound
+        OUTPUT "Invalid entry, please try again"
+        OUTPUT "Guess a number between", lower_bound, "and", upper_bound
+        INPUT num_guess
+       
+    WHILE secret_number < num_guess OR secret_number > num_guess
+        IF num_guess > secret_number
+            OUTPUT "Nope, too high"
+            OUTPUT "Guess another number"
+            INPUT num_guess
+            
+            WHILE num_guess < lower_bound OR num_guess > upper_bound
+                OUTPUT "Invalid entry, please try again"
+                OUTPUT "Guess a number between", lower_bound, "and", upper_bound
+                INPUT num_guess
+        ELSE 
+            OUTPUT "Nope, too low"
+            OUTPUT "Guess another number"
+            INPUT num_guess
+            WHILE num_guess < lower_bound OR num_guess > upper_bound
+                OUTPUT "Invalid entry, please try again"
+                OUTPUT "Guess a number between", lower_bound, "and", upper_bound
+                INPUT num_guess     
+
+    OUTPUT "You got it!"
+    OUTPUT "Play again?"
+    INPUT answer
+    WHILE LOWERCASE(answer) == "yes"
+        # Establish a valid guessing range.
+        OUTPUT "Enter the lower bound"
+        INPUT lower_bound
+    
+        OUTPUT "Enter upper bound"
+        INPUT upper_bound
+    
+        WHILE lower_bound >= upper_bound
+            OUTPUT "Invalid input, please try again"
+            OUTPUT "Enter the lower bound"
+            INPUT lower_bound
+    
+            OUTPUT "Enter upper bound"
+            INPUT upper_bound        
+
+        # Establish the number the player is trying to guess.
+        SET secret_number = RANDOM INTEGER BETWEEN lower_bound AND upper_bound
+
+        # Play the game.
+        OUTPUT "Guess a number between", lower_bound, "and", upper_bound
+        INPUT num_guess
+    
+        WHILE num_guess < lower_bound OR num_guess > upper_bound
+            OUTPUT "Invalid entry, please try again"
+            OUTPUT "Guess a number between", lower_bound, "and", upper_bound
+            INPUT num_guess
+       
+        WHILE secret_number < num_guess OR secret_number > num_guess
+            IF num_guess > secret_number
+                OUTPUT "Nope, too high"
+                OUTPUT "Guess another number"
+                INPUT num_guess
+            
+                WHILE num_guess < lower_bound OR num_guess > upper_bound
+                    OUTPUT "Invalid entry, please try again"
+                    OUTPUT "Guess a number between", lower_bound, "and", upper_bound
+                    INPUT num_guess
+            ELSE 
+                OUTPUT "Nope, too low"
+                OUTPUT "Guess another number"
+                INPUT num_guess
+                WHILE num_guess < lower_bound OR num_guess > upper_bound
+                    OUTPUT "Invalid entry, please try again"
+                    OUTPUT "Guess a number between", lower_bound, "and", upper_bound
+                    INPUT num_guess     
+
+        OUTPUT "You got it!"
+        OUTPUT "Play again?"
+        INPUT answer
+    OUTPUT "Goodbye!"
+
+END hilow_game
+
+# === References ===
+# TODO: Add references for sources you used, or delete this line if unused.
